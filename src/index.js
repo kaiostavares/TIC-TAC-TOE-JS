@@ -106,6 +106,7 @@ function clearBoard() {
     box.style.color = "var(--primaryColor)"
     box.addEventListener("click",boardClicked)
   });
+  playersMovementsCounter = 0
 }
 
 function clearPoints(){
