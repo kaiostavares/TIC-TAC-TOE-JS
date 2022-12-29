@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor:#05C7F2;
+    --secundaryColor:#F22E52;
+    --bgColor:rgba(0, 0, 0, 0.859);
+    --gameLine: white
+}
+
+body{
+   font-family:  cursive;
+   background-color: var(--bgColor);
+}
+
+.container{
+    padding: 30px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container h1#title{
+    font-size: 37px;
+    color:var(--secundaryColor);
+    
+}
+
+#gameStatus{
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+#gameStatus .playerName{
+    text-align: center;
+    border: 0px;
+    background-color: transparent;
+    width: 90px;
+    height: auto;
+    font-size: 20px;
+    color: var(--gameLine);
+}
+
+#gameStatus .points{
+    color: var(--secundaryColor);
+    font-size: 30px;
+}
+
+#board{
+    display: flex;
+    width: 300px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items:flex-end;
+    justify-content:center;
+    border-right: 4px solid var(--gameLine);
+    border-bottom: 4px solid var(--gameLine);
+    font-size: 70px;
+    color: var(--primaryColor);
+}
+
+.box:nth-child(3n) {
+    border-right: none;
+}
+.box:nth-child(6) ~ .box{
+    border-bottom: none;
+} 
+
+#buttons{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#buttons .button{
+    padding: 10px;
+    background-color: var(--secundaryColor);
+    color: var(--bgColor);
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+}
+
+#buttons .button:hover{
+    background-color: var(--primaryColor);
+}
+
+input::placeholder{
+    color: rgba(255, 255, 255, 0.711);
+}
+
+.playerTime{
+    color: var(--primaryColor) !important;
+}
