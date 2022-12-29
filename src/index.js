@@ -27,8 +27,7 @@ disabledNames(true)
 gameBtn.addEventListener('click',startGame)
 
 function startGame(){
-  title.innerText = "TIC TAC TOE"
-  player1.style.color = "var(--gameLine)"
+  clearNames()
   clearBoard()
   clearPoints()
   disabledNames(false)
@@ -42,13 +41,14 @@ function boardClicked(e) {
   let currentBox = e.target;
   if (!playersMovements[currentBox.id]) {
     playersMovements[currentBox.id] = currentPLayer
+    currentBox.innerText = currentPLayer;
     playersMovementsCounter++
+    console.log(playersMovementsCounter)
     if(playersMovementsCounter ==9){
       title.innerText = "DRAW"
+      changePlayers()
       return
     }
-    currentBox.innerText = currentPLayer;
-    
     if(Winner() !== false){
       addPoints()
       let winnBoxes = Winner()
@@ -112,6 +112,14 @@ function clearBoard() {
 function clearPoints(){
   pointsP1.innerText = 0
   pointsP2.innerText = 0
+}
+
+function clearNames(){
+  player1.style.color = "var(--gameLine)"
+  player2.style.color = "var(--gameLine)"
+  player1.innerText = "Player1"
+  player2.innerText = "Player2"
+  title.innerText = "TIC TAC TOE"
 }
 
 function disabledNames(true_false){
