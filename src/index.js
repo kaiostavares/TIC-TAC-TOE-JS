@@ -43,12 +43,7 @@ function boardClicked(e) {
     playersMovements[currentBox.id] = currentPLayer
     currentBox.innerText = currentPLayer;
     playersMovementsCounter++
-    console.log(playersMovementsCounter)
-    if(playersMovementsCounter ==9){
-      title.innerText = "DRAW"
-      changePlayers()
-      return
-    }
+   
     if(Winner() !== false){
       addPoints()
       let winnBoxes = Winner()
@@ -58,6 +53,10 @@ function boardClicked(e) {
       })
       boxes.forEach((box) => {box.removeEventListener("click", boardClicked)})
       return
+    }
+
+    if(playersMovementsCounter ==9){
+      title.innerText = "DRAW"
     }
 
     changePlayers();
